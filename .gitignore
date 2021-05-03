@@ -4,6 +4,10 @@
 /node_modules
 /.pnp
 .pnp.js
+package-lock.json
+VSWorkspaceState.json
+slnx.sqlite
+.suo
 
 # testing
 /coverage
