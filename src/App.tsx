@@ -1,14 +1,12 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 
-import WfProgress from './components/wfprogress/wfprogress'
+import Wf from './components/wf/wf'
 
 function App() {
   return (
     <div className="App">
-
-        <WfProgress />
+        <Wf steps={[]} />
     </div>
   );
 }
