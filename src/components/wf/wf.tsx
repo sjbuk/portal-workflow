@@ -3,8 +3,7 @@ import axios from "axios";
 import WfForm from "../wfform/wfform"
 import WfProgress from "../wfprogress/wfprogress"
 
-type StepState = { steps: any[] };
-type StepProps = { steps: any[] };
+import {IStepState,IStepProps} from "../../interfaces/interfaces"
 
 const SERVER_URL = process.env.REACT_APP_K2_URL;
 const HEADERS = {
@@ -14,10 +13,11 @@ const HEADERS = {
 };
 
 
-class Wf extends Component<StepState,StepProps> {
-  constructor(props:StepProps){
+class Wf extends Component<IStepState,IStepProps> {
+  constructor(props:IStepProps){
     super(props);
-    this.state = {steps: []};
+    this.state = {steps: [], fromJson: "HELLLOOO"};
+    
   }
   async workflowStages() {
     try {
@@ -37,8 +37,8 @@ class Wf extends Component<StepState,StepProps> {
   render() {
     return (
       <div className="workflow">
-          <WfForm steps={this.state.steps}></WfForm>
           <WfProgress steps={this.state.steps}></WfProgress>
+          <WfForm form={this.state.fromJson}></WfForm>
       </div>
     );
   }

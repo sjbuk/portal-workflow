@@ -1,15 +1,16 @@
 import { Component } from "react";
+import Form from "@rjsf/core";
+import {IFormProps} from "../../interfaces/interfaces"
+import {JSONSchema, UISchema} from "../../mock/formNameTelephone"
 
-type StepState = { steps: any[] };
-type StepProps = { steps: any[] };
-
-class Wf extends Component<StepProps, StepState> {
+class Wf extends Component<IFormProps> {
 
 
   render() {
     return (
       <div className="wf">
-          FORM
+          {this.props.form}
+          <Form schema={JSONSchema} uiSchema={UISchema}></Form>
       </div>
     );
   }

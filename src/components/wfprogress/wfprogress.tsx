@@ -1,18 +1,15 @@
 import { Component, ReactNode } from "react";
 
 import "./wfprogress.css";
+import {IStepState,IStepProps} from "../../interfaces/interfaces"
 
 
-
-type StepState = { steps: any[] };
-type StepProps = { steps: any[] };
-class WfProgress extends Component<StepProps, StepState> {
+class WfProgress extends Component<IStepProps, IStepState> {
 
 
   render() {
     return (
       <div className="steps-progressbar">
-        Hello from WF PROGRESS
         <ul>
           {this.props.steps
             .sort((a, b) => a.StageId - b.StageId)
